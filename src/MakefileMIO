@@ -1,0 +1,11 @@
+SOURCES = test.c FuncionesNoRequeridas.c coloreo.c ordenacion.c queue.c map.c helpercomp.c
+OBJECTS = $(SOURCES:.c=.o)
+TARGET = grafo
+
+compilar:
+	$(RM) $(OBJECTS) $(TARGET)
+	gcc -Wall -Werror -Wextra -pedantic -std=c99 -g -c -O3 $(SOURCES)
+	gcc -Wall -Werror -Wextra -pedantic -std=c99 -g -o $(TARGET) $(OBJECTS)
+
+clean:
+	$(RM) $(OBJECTS) $(TARGET)
